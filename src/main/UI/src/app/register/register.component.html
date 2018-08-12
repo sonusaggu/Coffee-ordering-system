@@ -1,0 +1,38 @@
+<br/><br/><div class="container"  style="width:70%;border:solid 1px #ccc;">
+    <div class="title">
+       <h1>Register</h1> 
+    </div>
+    <div class="panel-body">
+      <form #RegisterData="ngForm" (ngSubmit)="register(RegisterData.value);  RegisterData.resetForm()">
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text"  class="form-control" name="username" ngModel required placeholder="username">
+
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text"  class="form-control" name="name" ngModel required placeholder="name">
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="password"  class="form-control" name="password" ngModel required placeholder="password">
+        
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="date"  class="form-control" name="dob" ngModel required placeholder="Date of Birth">
+    
+            </div>
+        </div><br/>
+        <span>{{errorMsg}}</span>
+        <button 
+            class="btn waves-effect waves-light" 
+            type="submit" >Register</button>
+          </form>
+          </div>
+  
+  </div>
+  

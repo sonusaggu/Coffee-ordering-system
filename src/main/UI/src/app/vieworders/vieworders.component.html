@@ -1,0 +1,21 @@
+<p style="background-color:#ccc;padding:3px;">
+Total Orders:
+</p>
+<style>table, th, td {
+        border: 1px solid black;
+        padding:2px;
+     }</style>
+<div *ngFor="let order of orderData" >
+<div>Order ID: {{order.orderid}}</div> 
+
+<table>
+        <tr>
+            <th>Name</th><th>Price</th><th>Qantity</th>
+        </tr>
+        <tr *ngFor="let suborder of order.orderDetail" >
+              <td>{{suborder.productname}} </td> <td>{{suborder.productprice}}</td> <td>{{suborder.quantity}}</td>
+            </tr>
+    </table>
+
+<hr/>
+</div>

@@ -1,0 +1,42 @@
+
+<div style="width:90%; padding-left:10%; ">
+    <form #orderData="ngForm" (ngSubmit)="saveOrder(orderData.value);orderData.resetForm()">
+
+        <table >
+            <tr >
+                <th>Name</th><th>Price</th><th>Quantity</th>
+              </tr>
+              <tr *ngFor="let product of productData">
+                  <td>{{product.productname}}</td><td>{{product.productprice}}</td><td> <input type="number" min="0" class="form-control" name={{product.productname}}-{{product.productprice}} ngModel placeholder="0"></td>
+                </tr>
+        </table>
+
+     <br/>
+     <button 
+     class="btn waves-effect waves-light" 
+     type="submit" >Save</button>
+   </form>
+  {{errorMsg}}
+   
+ </div>
+<hr/>
+ <style>table, th, td {
+    border: 1px solid black;
+    padding:2px;
+ }</style>
+ <div *ngIf="flag">
+ <div>Please Confirm your order:</div>
+
+ <table >
+    <tr >
+        <th>Name</th><th>Price</th><th>Quantity</th>
+      </tr>
+   <tr *ngFor="let orders of displayOrder" >
+     <td>{{orders.productname}}</td><td>{{orders.productprice}}</td><td>{{orders.quantity}}</td>
+   </tr>
+ </table>
+ <button 
+ class="btn waves-effect waves-light" 
+ type="submit" (click)="submitOrder()" >Submit Order</button>
+</div>
+  
